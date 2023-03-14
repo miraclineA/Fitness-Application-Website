@@ -1,0 +1,20 @@
+
+
+table {
+    width: 100%;
+  }
+  
+  tr {
+    height: 0;
+  }
+  
+  tr:hover {
+    background: whitesmoke;
+  }
+  
+  tr:active {
+    background: #efefef;
+  }
+  .search{
+    margin-left: 540px;
+  }

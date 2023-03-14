@@ -1,0 +1,108 @@
+{
+  "registrationDetails": [
+    {
+      "firstName": "hweigf7t",
+      "lastName": "c",
+      "email": "nndbcy@gvjcss",
+      "mobile": "0947321y7y37u",
+      "weight": 585,
+      "height": "4",
+      "bmi": 0,
+      "bmiResult": "UnderWeight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "toxic fat reduction",
+        "Building Muscles",
+        "Sugar Craving Body",
+        "Fitness Freak"
+      ],
+      "haveGynBefore": "Yes",
+      "enquiryDate": "2023-02-17T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "firstName": "motvani",
+      "lastName": "malika",
+      "email": "malicc@gmail.com",
+      "mobile": "9912345678",
+      "weight": 24,
+      "height": "6.7",
+      "bmi": 0.13366005791935842,
+      "bmiResult": "UnderWeight",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "toxic fat reduction",
+        "Building Muscles",
+        "Sugar Craving Body",
+        "Fitness Freak"
+      ],
+      "haveGynBefore": "No",
+      "enquiryDate": "2023-02-16T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "firstName": "sindhu",
+      "lastName": "r",
+      "email": "sindhu@yahoo.com",
+      "mobile": "8901234567",
+      "weight": 78,
+      "height": "5.6",
+      "bmi": 0.1594387755102041,
+      "bmiResult": "UnderWeight",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Monthly",
+      "important": [
+        "toxic fat reduction",
+        "Sugar Craving Body",
+        "Fitness Freak"
+      ],
+      "haveGynBefore": "No",
+      "enquiryDate": "2023-02-23T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "firstName": "Miracline",
+      "lastName": "A",
+      "email": "miracline.a@arus.co.in",
+      "mobile": "09025154990",
+      "weight": 54,
+      "height": "66",
+      "bmi": 0.0013774104683195593,
+      "bmiResult": "UnderWeight",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Sugar Craving Body"
+      ],
+      "haveGynBefore": "Yes",
+      "enquiryDate": "2023-02-22T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "firstName": "pavi",
+      "lastName": "s",
+      "email": "pavi@gmail.com",
+      "mobile": "9908765123",
+      "weight": 45,
+      "height": "34",
+      "bmi": 0.0025951557093425604,
+      "bmiResult": "UnderWeight",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Quarterly",
+      "important": [
+        "Sugar Craving Body",
+        "Fitness Freak"
+      ],
+      "haveGynBefore": "Yes",
+      "enquiryDate": "2023-02-22T18:30:00.000Z",
+      "id": 6
+    }
+  ]
+}
