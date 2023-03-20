@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   userUpdate: any
   destroyvalue$ = new Subject<boolean>
   public isUpdateActive: boolean = false
-  isSubmited: boolean = false
+ 
 
 
   constructor(private formbuilder: FormBuilder, private serv: RegisterService, private toastServ: NgToastService, private activerouter: ActivatedRoute,
@@ -32,20 +32,20 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.registerForm = this.formbuilder.group({
-      firstName: ['', Validators.required],
+      firstName: [''],
       lastName: [''],
-      email: ['', Validators.required, Validators.email],
-      mobile: ['', Validators.required, Validators.maxLength(10)],
-      weight: ['', Validators.required],
-      height: ['', Validators.required],
+      email: [''],
+      mobile: [''],
+      weight: [''],
+      height: [''],
       bmi: [''],
       bmiResult: [''],
-      gender: ['', Validators.required],
-      requireTrainer: ['', Validators.required],
+      gender: [''],
+      requireTrainer: [''],
       package: [''],
       important: [''],
       haveGynBefore: [''],
-      enquiryDate: ['', Validators.required],
+      enquiryDate: [''],
 
     })
 
@@ -62,7 +62,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   }
 
 
-  submit(result: any) {
+  submit() {
 
 
     this.serv.postRegistration(this.registerForm.value).pipe(takeUntil(this.destroyvalue$)).subscribe((result: any) => {
@@ -73,9 +73,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   }
 
-  public myError = (controlName: string, errorName: string) => {
-    return this.registerForm.controls[controlName].hasError(errorName)
-  }
+
 
   update() {
 
