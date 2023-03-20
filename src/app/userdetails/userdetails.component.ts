@@ -8,14 +8,14 @@ import { RegisterService } from '../register.service';
   templateUrl: './userdetails.component.html',
   styleUrls: ['./userdetails.component.scss']
 })
-export class UserdetailsComponent implements OnInit,OnDestroy {
+export class UserdetailsComponent implements OnInit, OnDestroy {
 
   constructor(private serv: RegisterService, private activeRoute: ActivatedRoute) { }
 
 
   card: any
   id: any
-  destroyvalue$ = new Subject <boolean>
+  destroyvalue$ = new Subject<boolean>
   ngOnInit(): void {
     this.activeRoute.paramMap.pipe(takeUntil(this.destroyvalue$)).subscribe(val => {
       this.card = val.get('id')
@@ -27,7 +27,7 @@ export class UserdetailsComponent implements OnInit,OnDestroy {
 
   }
   ngOnDestroy(): void {
-    this.destroyvalue$.next (true)
+    this.destroyvalue$.next(true)
     this.destroyvalue$.complete()
   }
 

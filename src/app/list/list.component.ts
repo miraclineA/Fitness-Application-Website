@@ -13,7 +13,7 @@ import { RegisterService } from '../register.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit,OnDestroy  {
+export class ListComponent implements OnInit, OnDestroy {
   dataSource: any
 
   users: any
@@ -22,7 +22,7 @@ export class ListComponent implements OnInit,OnDestroy  {
   displayedColumns: string[] = ['id', 'firstName', 'email', 'mobile', 'bmi', 'bmiResult',
     'gender', 'package', 'enquiryDate', 'action'
   ];
-  destroyvalue$ = new Subject <boolean>
+  destroyvalue$ = new Subject<boolean>
   constructor(private serv: RegisterService, private route: Router, private confirm: NgConfirmService,
     private toast: NgToastService) { }
 
@@ -54,7 +54,7 @@ export class ListComponent implements OnInit,OnDestroy  {
     this.confirm.showConfirm("Are you Sure want to delete?", (
 
     ) => {
-      this.serv.deleteRegistered(id).pipe(takeUntil(this.destroyvalue$)).subscribe((res:any) => {
+      this.serv.deleteRegistered(id).pipe(takeUntil(this.destroyvalue$)).subscribe((res: any) => {
         this.toast.success({ detail: 'sucess', summary: 'Deleted Sucessfully', duration: 3000 })
         this.getUsers()
       })
@@ -64,9 +64,9 @@ export class ListComponent implements OnInit,OnDestroy  {
       })
 
   }
-    ngOnDestroy(): void {
-      this.destroyvalue$.next (true)
-      this.destroyvalue$.complete()
+  ngOnDestroy(): void {
+    this.destroyvalue$.next(true)
+    this.destroyvalue$.complete()
   }
 
 }

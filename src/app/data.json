@@ -1,28 +1,6 @@
 {
   "registrationDetails": [
     {
-      "firstName": "hweigf7t",
-      "lastName": "c",
-      "email": "nndbcy@gvjcss",
-      "mobile": "0947321y7y37u",
-      "weight": 585,
-      "height": "4",
-      "bmi": 0,
-      "bmiResult": "UnderWeight",
-      "gender": "Male",
-      "requireTrainer": "Yes",
-      "package": "Quarterly",
-      "important": [
-        "toxic fat reduction",
-        "Building Muscles",
-        "Sugar Craving Body",
-        "Fitness Freak"
-      ],
-      "haveGynBefore": "Yes",
-      "enquiryDate": "2023-02-17T18:30:00.000Z",
-      "id": 2
-    },
-    {
       "firstName": "motvani",
       "lastName": "malika",
       "email": "malicc@gmail.com",
@@ -85,24 +63,46 @@
       "id": 5
     },
     {
-      "firstName": "pavi",
-      "lastName": "s",
-      "email": "pavi@gmail.com",
-      "mobile": "9908765123",
-      "weight": 45,
-      "height": "34",
-      "bmi": 0.0025951557093425604,
+      "firstName": "Blesson",
+      "lastName": "J",
+      "email": "blesson303@gmail.com",
+      "mobile": "08056526611",
+      "weight": 75,
+      "height": "172",
+      "bmi": 0.0005746349378042185,
       "bmiResult": "UnderWeight",
       "gender": "Male",
-      "requireTrainer": "No",
-      "package": "Quarterly",
+      "requireTrainer": "Yes",
+      "package": "Monthly",
       "important": [
+        "toxic fat reduction",
+        "Building Muscles",
         "Sugar Craving Body",
         "Fitness Freak"
       ],
       "haveGynBefore": "Yes",
-      "enquiryDate": "2023-02-22T18:30:00.000Z",
+      "enquiryDate": "2023-03-16T18:30:00.000Z",
       "id": 6
+    },
+    {
+      "firstName": "ghjbhjh",
+      "lastName": "ajq",
+      "email": "shxyuaftgf@gmail.com",
+      "mobile": "07891234567",
+      "weight": 66,
+      "height": "5.2",
+      "bmi": 0,
+      "bmiResult": "UnderWeight",
+      "gender": "Female",
+      "requireTrainer": "Yes",
+      "package": "Monthly",
+      "important": [
+        "Building Muscles",
+        "Sugar Craving Body"
+      ],
+      "haveGynBefore": "Yes",
+      "enquiryDate": "2023-03-29T18:30:00.000Z",
+      "id": 7
     }
   ]
 }

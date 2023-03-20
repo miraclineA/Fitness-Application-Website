@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Subject, takeUntil } from 'rxjs';
@@ -10,7 +10,7 @@ import { RegisterService } from '../register.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent implements OnInit,OnDestroy{
+export class RegistrationComponent implements OnInit, OnDestroy {
 
   public packages = ["Monthly", "Quarterly", "Yearly"]
 
@@ -22,43 +22,49 @@ export class RegistrationComponent implements OnInit,OnDestroy{
   ]
   registerForm!: FormGroup
   userUpdate: any
-  destroyvalue$ = new Subject <boolean>
+  destroyvalue$ = new Subject<boolean>
   public isUpdateActive: boolean = false
+  isSubmited: boolean = false
+
 
   constructor(private formbuilder: FormBuilder, private serv: RegisterService, private toastServ: NgToastService, private activerouter: ActivatedRoute,
     private route: Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formbuilder.group({
-      firstName: [''],
+      firstName: ['', Validators.required],
       lastName: [''],
-      email: [''],
-      mobile: [''],
-      weight: [''],
-      height: [''],
+      email: ['', Validators.required, Validators.email],
+      mobile: ['', Validators.required, Validators.maxLength(10)],
+      weight: ['', Validators.required],
+      height: ['', Validators.required],
       bmi: [''],
       bmiResult: [''],
-      gender: [''],
-      requireTrainer: [''],
+      gender: ['', Validators.required],
+      requireTrainer: ['', Validators.required],
       package: [''],
       important: [''],
       haveGynBefore: [''],
-      enquiryDate: [''],
+      enquiryDate: ['', Validators.required],
 
     })
 
-    this.registerForm.controls['height'].valueChanges.pipe(takeUntil(this.destroyvalue$)).subscribe((res: any) => {                                                                                                                                                                                    
+    this.registerForm.controls['height'].valueChanges.pipe(takeUntil(this.destroyvalue$)).subscribe((res: any) => {
       this.calculateBmi(res)
     })
     this.activerouter.params.subscribe((val: any) => {
       this.userUpdate = val['id']
-      this.serv.getRegisteredUserId(this.userUpdate).pipe(takeUntil(this.destroyvalue$)).subscribe((result:any) => {
+      this.serv.getRegisteredUserId(this.userUpdate).pipe(takeUntil(this.destroyvalue$)).subscribe((result: any) => {
         this.isUpdateActive = true
         this.formUpdate(result)
       })
     })
   }
-  submit() {
+
+
+  submit(result: any) {
+
+
     this.serv.postRegistration(this.registerForm.value).pipe(takeUntil(this.destroyvalue$)).subscribe((result: any) => {
       this.toastServ.success({ detail: "Sucess", summary: "Enquiry Added", duration: 3000 })
       this.registerForm.reset()
@@ -67,7 +73,12 @@ export class RegistrationComponent implements OnInit,OnDestroy{
 
   }
 
+  public myError = (controlName: string, errorName: string) => {
+    return this.registerForm.controls[controlName].hasError(errorName)
+  }
+
   update() {
+
     this.serv.updateRegisterUser(this.registerForm.value, this.userUpdate).pipe(takeUntil(this.destroyvalue$)).subscribe((result: any) => {
       this.toastServ.success({ detail: "Sucess", summary: "Enquiry Updated", duration: 3000 })
       this.registerForm.reset()
@@ -78,7 +89,7 @@ export class RegistrationComponent implements OnInit,OnDestroy{
   calculateBmi(heightvalue: number) {
     const weight = this.registerForm.value.height
     const height = heightvalue;
-    const bmi = weight/(height*height)
+    const bmi = weight / (height * height)
     this.registerForm.controls['bmi'].patchValue(bmi);
 
     switch (true) {
@@ -119,8 +130,10 @@ export class RegistrationComponent implements OnInit,OnDestroy{
     })
   }
   ngOnDestroy(): void {
-    this.destroyvalue$.next (true)
+    this.destroyvalue$.next(true)
     this.destroyvalue$.complete()
   }
+
+
 
 }
